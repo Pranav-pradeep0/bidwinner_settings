@@ -21,7 +21,7 @@ import styled from 'styled-components';
 const CompanyDetails = () => {
     return (
         <Fragment>
-            <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', gap: '30px', height: 420, overflowY: 'scroll' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', gap: '30px', height: '375px', overflowY: 'scroll' }}>
 
                 <Typography sx={{ fontWeight: '300', fontSize: '14px', color: 'rgba(0, 0, 0, 0.6)', textAlign: 'center', padding: 0, width: 'max-content' }}>Company Logo</Typography>
 

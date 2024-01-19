@@ -46,7 +46,7 @@ const PersonalSettings = () => {
     return (
         <Box>
             <Box
-                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 420, borderTop: 1, borderTopColor: 'divider', }}
+                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: '400px', borderTop: 1, borderTopColor: 'divider', }}
             >
                 <Tabs
                     orientation="vertical"
@@ -62,8 +62,17 @@ const PersonalSettings = () => {
                         paddingTop: '30px',
                     }}
                 >
-                    <Tab label="Personal Details" style={{ backgroundColor: value === 0 ? 'rgba(227, 243, 255, 1)' : 'transparent', borderRadius: '10px', paddingInline: '50px', marginInline: '20px' }} {...a11yProps(0)} />
-                    <Tab label="Other" style={{ backgroundColor: value === 1 ? 'rgba(227, 243, 255, 1)' : 'transparent', borderRadius: '10px', paddingInline: '50px', marginInline: '20px' }} {...a11yProps(1)} />
+                    <Tab label="Personal Details" style={{
+                        backgroundColor: value === 0 ? 'rgba(227, 243, 255, 1)' : 'transparent', fontWeight: '500',
+                        // textTransform:'none',
+                        color: '#040404', borderRadius: '10px', paddingInline: '50px', marginInline: '20px'
+                    }} {...a11yProps(0)} />
+
+                    <Tab label="Other" style={{
+                        backgroundColor: value === 1 ? 'rgba(227, 243, 255, 1)' : 'transparent', fontWeight: '500',
+                        // textTransform:'none',
+                        color: '#040404', borderRadius: '10px', paddingInline: '50px', marginInline: '20px'
+                    }} {...a11yProps(1)} />
                 </Tabs>
                 <TabPanel value={value} index={0} >
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', gap: '30px', paddingTop: '30px', }}>

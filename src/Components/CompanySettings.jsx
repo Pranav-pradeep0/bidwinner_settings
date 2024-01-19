@@ -86,9 +86,12 @@ const CompanySettings = () => {
             style={{
                 backgroundColor: value === index ? 'rgba(227, 243, 255, 1)' : 'transparent',
                 borderRadius: '10px',
-                paddingInline: '30px',
+                // paddingInline: '30px',
                 marginInline: '20px',
-                width:'max-content'
+                fontWeight: '500',
+                // textTransform:'none',
+                color:'#040404',
+                width: 'max-content',
             }}
             {...a11yProps(index)}
         />
@@ -97,7 +100,7 @@ const CompanySettings = () => {
     return (
         <Box>
             <ScrollableBox
-                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 420, borderTop: 1, borderTopColor: 'divider', }}
+                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: '400px', borderTop: 1, borderTopColor: 'divider', }}
             >
                 <Tabs
                     orientation="vertical"
@@ -111,6 +114,7 @@ const CompanySettings = () => {
                             display: 'none',
                         },
                         paddingTop: '30px',
+                        minWidth: '230px',
                     }}
                 >
                     {tabs}
