@@ -1,6 +1,23 @@
 import { Avatar, Box, Button, Tab, Tabs, TextField, Typography } from '@mui/material'
 import React from 'react'
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const ScrollableBox = styled(Box)`
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(217, 217, 217, 1);
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+`;
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -75,7 +92,7 @@ const PersonalSettings = () => {
                     }} {...a11yProps(1)} />
                 </Tabs>
                 <TabPanel value={value} index={0} >
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', gap: '30px', paddingTop: '30px', }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', gap: '30px', paddingTop: '30px',}}>
                         <Box sx={{ position: 'relative' }}>
                             <Avatar
                                 alt=""
@@ -102,15 +119,24 @@ const PersonalSettings = () => {
                             </Box>
                         </Box>
 
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                            <Typography sx={{ color: 'rgba(0, 0, 0, 0.6)', fontWeight: '300', fontSize: '14px', paddingLeft: '3px' }}>Your Name</Typography>
-                            <TextField size="small" id="outlined-basic" variant="outlined" sx={{ width: '600px' }} placeholder='Jane Cooper' />
-                        </Box>
-
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                            <Typography sx={{ color: 'rgba(0, 0, 0, 0.6)', fontWeight: '300', fontSize: '14px', paddingLeft: '3px' }}>Personal Email</Typography>
-                            <TextField size="small" id="outlined-basic" variant="outlined" sx={{ width: '600px' }} placeholder='janecooper@gmail.com' />
-                        </Box>
+                        <ScrollableBox >
+                            <Box sx={{height:'180px', overflowY:'scroll', display:'flex', flexDirection:'column', gap:'20px'}}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                    <Typography sx={{ color: 'rgba(0, 0, 0, 0.6)', fontWeight: '300', fontSize: '14px', paddingLeft: '3px' }}>Your Name</Typography>
+                                    <TextField size="small" id="outlined-basic" variant="outlined" sx={{ width: '600px' }} placeholder='Jane Cooper' />
+                                </Box>
+        
+                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                    <Typography sx={{ color: 'rgba(0, 0, 0, 0.6)', fontWeight: '300', fontSize: '14px', paddingLeft: '3px' }}>Personal Email</Typography>
+                                    <TextField size="small" id="outlined-basic" variant="outlined" sx={{ width: '600px' }} placeholder='janecooper@gmail.com' />
+                                </Box>
+        
+                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                    <Typography sx={{ color: 'rgba(0, 0, 0, 0.6)', fontWeight: '300', fontSize: '14px', paddingLeft: '3px' }}>Personal Email</Typography>
+                                    <TextField size="small" id="outlined-basic" variant="outlined" sx={{ width: '600px' }} placeholder='janecooper@gmail.com' />
+                                </Box>
+                            </Box>
+                        </ScrollableBox>
 
                         <Button sx={{ marginRight: 'auto' }} variant="outlined">Change Password</Button>
 
